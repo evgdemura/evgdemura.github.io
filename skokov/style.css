@@ -21,7 +21,7 @@ html {
 	height: 1px;
 }
 .container {
-	max-width: 1230px;
+	max-width: 1230px !important;
 	margin: auto;
 	padding: 0px 15px;
 	display: -moz-flex;
