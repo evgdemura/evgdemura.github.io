@@ -190,10 +190,7 @@
 	transition: color .15s ease;
 }
 </style>
-    <link rel="stylesheet" href="css/reset/reset.css">
-    <link rel="stylesheet" href="css/font-awesome.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="css/media.css">
+
 
 </head>
 
@@ -504,16 +501,16 @@
         </div>
     </footer>
     <script>
-//        function loadCSS(hf) {
-//            var ms = document.createElement("link");
-//            ms.rel = "stylesheet";
-//            ms.href = hf;
-//            document.getElementsByTagName("head")[0].appendChild(ms);
-//        }
-//        loadCSS("css/font-awesome-4.7.0/css/font-awesome.min.css");
-//        loadCSS("css/reset/reset.css");
-//        loadCSS("style.css");
-//        loadCSS("css/media.css");
+        function loadCSS(hf) {
+            var ms = document.createElement("link");
+            ms.rel = "stylesheet";
+            ms.href = hf;
+            document.getElementsByTagName("head")[0].appendChild(ms);
+        }
+        loadCSS("css/font-awesome-4.7.0/css/font-awesome.min.css");
+        loadCSS("css/reset/reset.css");
+        loadCSS("style.css");
+        loadCSS("css/media.css");
 
     </script>
     <script>
