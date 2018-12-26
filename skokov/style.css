@@ -37,8 +37,9 @@ html {
 	z-index: 2;
 }
 
+/*
 body {
-	/*	background: url(img/bg1.png) repeat top center, url(img/layers.png) no-repeat top center;*/
+		background: url(img/bg1.png) repeat top center, url(img/layers.png) no-repeat top center;
 	background-color: #fff;
 	max-width: 1600px;
 	margin: auto;
@@ -47,14 +48,9 @@ body {
 	position: relative;
 	min-height: 100%;
 }
+*/
 
-.body_index {
-	background: url(img/bg1.png) repeat top center, url(img/img@1X.png) no-repeat top center;
-	background-size: 1600px 886px;
-	background-color: #fff;
-	background-attachment: fixed;
-	/*	background-size: cover;*/
-}
+
 
 .news_content {
 	position: relative;
