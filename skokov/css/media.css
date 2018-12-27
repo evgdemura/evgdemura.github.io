@@ -103,6 +103,9 @@
 	.footer_contact-info {
 		margin-bottom: 80px;
 	}
+    .header_profit{
+        display: none;
+    }
 }
 
 @media only screen and (max-width : 650px) {
