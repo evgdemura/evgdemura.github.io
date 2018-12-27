@@ -846,29 +846,9 @@ body {
 	position: relative;
 }
 
-.contact_info-item li a::before {
-	content: "";
-	display: block;
-	width: 30px;
-	height: 30px;
-	position: absolute;
-	left: 0;
-	top: 0;
-}
-
-.contact_info-item li.contact_info-mail a::before {
-	background: url(img/message@1X.png);
-}
-
-.contact_info-item li.contact_info-map a::before {
-	background: url(img/pin@1X.png);
-}
-
-.contact_info-item li.contact_info-tel a::before {
-	background-image: url(img/phone@1X.png);
-}
 
 .contact_info-item li a {
+    padding-left: 30px;
 	font-size: 12px;
 	color: #fff;
 	text-transform: uppercase;
