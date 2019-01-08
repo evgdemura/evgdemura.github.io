@@ -1,13 +1,12 @@
 <?php
-
 require_once('phpmailer/PHPMailerAutoload.php');
 $mail = new PHPMailer;
 $mail->CharSet = 'utf-8';
 
-$name = $_POST['name'];
-$number = $_POST['number'];
-$email = $_POST['email'];
-$date = $_POST['date'];
+$name = trim(htmlspecialchars($_POST['name']));//Получаем имя
+$email = trim(htmlspecialchars($_POST['email']));//Получаем адрес эл. почты
+$number = trim(htmlspecialchars($_POST['number']));
+$date = trim(htmlspecialchars($_POST['date']));
 //$mail->SMTPDebug = 3;                               // Enable verbose debug output
 
 $mail->isSMTP();                                      // Set mailer to use SMTP
