@@ -181,12 +181,12 @@
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 500px) {
 
-	#header_button {
+	.header-content #header_button {
 		display: inline-block;
 		margin-bottom: 10px;
 	}
 
-	.header_nav-main ul {
+	.header-content .header_nav ul {
 		display: none;
 		position: absolute;
 		left: 50%;
@@ -197,13 +197,13 @@
 		border-radius: 8px;
 	}
 
-	.header_nav li {
+	.header-content .header_nav li {
 		margin: 10px 0;
 		display: block;
 		text-align: center;
 	}
 
-	.header_nav li a {
+	.header-content .header_nav li a {
 		font-size: 14px;
 		padding: 10px 20px;
 		background-color: rgba(0, 0, 0, .9);
