@@ -27,6 +27,11 @@
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px) {
+
+	.text_block::before {
+		display: none;
+	}
+
 	.services_item {
 		width: 50%;
 	}
@@ -103,9 +108,6 @@
 	.footer_contact-info {
 		margin-bottom: 80px;
 	}
-    .header_profit{
-        display: none;
-    }
 }
 
 @media only screen and (max-width : 650px) {
@@ -178,18 +180,21 @@
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 500px) {
+
 	#header_button {
 		display: inline-block;
 		margin-bottom: 10px;
 	}
 
-	.header_nav ul {
+	.header_nav-main ul {
 		display: none;
 		position: absolute;
 		left: 50%;
 		width: 50%;
 		margin-left: -25%;
 		z-index: 100;
+		background-color: rgba(255, 255, 255, .9);
+		border-radius: 8px;
 	}
 
 	.header_nav li {
