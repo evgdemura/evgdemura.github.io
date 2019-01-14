@@ -111,6 +111,20 @@
 }
 
 @media only screen and (max-width : 650px) {
+	.services_item {
+		-webkit-transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+
+	.team_item {
+		-webkit-transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+
 	.s_news-item img {
 		display: none;
 	}
@@ -181,29 +195,29 @@
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 500px) {
 
-	.header-content #header_button {
+	#header_button {
 		display: inline-block;
 		margin-bottom: 10px;
 	}
 
-	.header-content .header_nav ul {
+	.header_nav ul {
 		display: none;
 		position: absolute;
 		left: 50%;
 		width: 50%;
 		margin-left: -25%;
 		z-index: 100;
-		background-color: rgba(255, 255, 255, .9);
+		background-color: rgba(255, 255, 255, .5);
 		border-radius: 8px;
 	}
 
-	.header-content .header_nav li {
+	.header_nav li {
 		margin: 10px 0;
 		display: block;
 		text-align: center;
 	}
 
-	.header-content .header_nav li a {
+	.header_nav li a {
 		font-size: 14px;
 		padding: 10px 20px;
 		background-color: rgba(0, 0, 0, .9);

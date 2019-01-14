@@ -21,91 +21,11 @@ $(window).scroll(function () {
 		$('.button-up').css('right', '-70px');
 	}
 });
-
 $('.button-up').click(function () {
 	$('html,body').animate({
 		scrollTop: 0
 	}, 700)
-})
-
-//=== === === == animation servise & team=========
-$(window).scroll(function () {
-	var item = document.getElementById('team');
-	var services = document.getElementById('services');
-	var coordsItem = item.getBoundingClientRect().top;
-	var coordsServices = services.getBoundingClientRect().top;
-	if (coordsItem <= $(window).height() / 2 && coordsItem >= 0) {
-		$('.team_item').css('transform', 'rotateY(0deg)')
-	};
-	if (coordsServices <= $(window).height() / 2 && coordsServices >= 0) {
-		$('.services_item').css('transform', 'rotate(0deg)')
-	}
-
 });
-$('.team_item').each(function (index) {
-	$(this).css({
-		'transition-delay': index / 10 + 's'
-	});
-})
-$(".services_item").each(function (index) {
-	$(this).css({
-		'transition-delay': index / 10 + 's'
-	});
-});
-//===========textillate=============
-$(function () {
-	$('.textillate').textillate({
-		shuffle: true,
-		sync: false
-	});
-});
-
-
-//var waypoint = new Waypoint({
-//	element: $(".s_services-h1"),
-//	handler: function (direction) {
-//		$('.s_services-h1').textillate({
-//			shuffle: false,
-//			sync: false
-//		});
-//	},
-//	offset: $(window).height()
-//});
-//var waypoint = new Waypoint({
-//	element: $(".s_aboutUs-h1"),
-//	handler: function (direction) {
-//		$('.s_aboutUs-h1').textillate({ in: {
-//				shuffle: false,
-//				effect: 'fadeInLeftBig'
-//			}
-//		});
-//	},
-//	offset: $(window).height()
-//});
-var waypoint = new Waypoint({
-	element: $(".s_video-h1"),
-	handler: function (direction) {
-		$('.s_video-h1').textillate({ in: {
-				effect: 'fadeInLeftBig',
-				shuffle: true,
-				delayScale: 1
-			}
-		});
-	},
-	offset: $(window).height()
-});
-var waypoint = new Waypoint({
-	element: $(".news-desc"),
-	handler: function (direction) {
-		$('.news-desc').textillate({ in: {
-				effect: 'bounceInRight',
-				shuffle: true,
-				delayScale: .1
-			}
-		});
-	},
-	offset: $(window).height()
-})
 //====scrollToElem=====================
 function scrollToElem(elem, time) {
 	var target = $(elem).offset().top;
@@ -125,8 +45,64 @@ $('[href="#about-us"]').click(function () {
 $('[href="#news"]').click(function () {
 	scrollToElem("#news");
 })
+//=== === === == animation servise & team=========
+//===================================================
 
-//===========my waypoint=============
+$(window).scroll(function () {
+	$('.team_item').each(function (index) {
+		$(this).css({
+			'transition-delay': index / 10 + 's'
+		});
+	})
+	$(".services_item").each(function (index) {
+		$(this).css({
+			'transition-delay': index / 10 + 's'
+		});
+	});
+	var item = document.getElementById('team');
+	var services = document.getElementById('services');
+	var coordsItem = item.getBoundingClientRect().top;
+	var coordsServices = services.getBoundingClientRect().top;
+	if (coordsItem <= $(window).height() - 200 && coordsItem >= 0) {
+		$('.team_item').css('transform', 'rotateY(0deg)')
+	};
+	if (coordsServices <= $(window).height() - 200 && coordsServices >= 0) {
+		$('.services_item').css('transform', 'rotate(0deg)')
+	}
+});
+//===========textillate=============
+$(function () {
+	$('.textillate').textillate({
+		shuffle: true,
+		sync: false
+	});
+});
+var waypoint = new Waypoint({
+	element: $(".s_video-h1"),
+	handler: function (direction) {
+		$('.s_video-h1').textillate({ in: {
+				effect: 'fadeInLeftBig',
+				shuffle: true,
+				delayScale: 1.5
+			}
+		});
+	},
+	offset: $(window).height()
+});
+var waypoint = new Waypoint({
+	element: $(".news-desc"),
+	handler: function (direction) {
+		$('.news-desc').textillate({ in: {
+				effect: 'bounceInRight',
+				shuffle: true,
+				delayScale: .1
+			}
+		});
+	},
+	offset: $(window).height()
+})
+
+//===========my waypoint & textillate=============
 function fnTextillate(el) {
 	var elem = document.getElementById(el);
 	var eff = elem.getAttribute('data-in-effect');
@@ -137,7 +113,6 @@ function fnTextillate(el) {
 			delayScale: delay || .2
 		}
 	});
-
 }
 
 function waypo(elem, fn, fnArg, offset) {
@@ -148,85 +123,6 @@ function waypo(elem, fn, fnArg, offset) {
 	};
 }
 $(window).scroll(function () {
-	waypo('s_services-h1', fnTextillate, 's_services-h1', 200);
-	waypo("about-us", fnTextillate, "about-us", 200);
+	waypo('s_services-h1', fnTextillate, 's_services-h1', 100);
+	waypo("about-us", fnTextillate, "about-us", 100);
 })
-
-//===========================================
-//var flag = true;
-//$('[href="#services"]').click(function () {
-//	if (!flag) {
-//		return
-//	};
-//	$('body').css('animation', 'onload 1s ease');
-//	flag = false;
-//	setTimeout(function () {
-//		scrollToElem(".s_services");
-//	}, 500)
-//	setTimeout(function () {
-//		$('html,body').css('animation', 'none');
-//		flag = true;
-//	}, 1000);
-//})
-//
-//
-//$('[href="#about-us"]').click(function () {
-//	if (!flag) {
-//		return
-//	};
-//	$('body').css('animation', 'onload 1s ease');
-//	flag = false;
-//	setTimeout(function () {
-//		scrollToElem(".s_aboutUs");
-//	}, 500)
-//	setTimeout(function () {
-//		$('html,body').css('animation', 'none');
-//		flag = true;
-//	}, 1000);
-//});
-//
-//
-//$('[href="#contact"]').click(function () {
-//	if (!flag) {
-//		return
-//	};
-//	$('body').css('animation', 'onload 1s ease');
-//	flag = false;
-//	setTimeout(function () {
-//		scrollToElem(".footer");
-//	}, 500)
-//	setTimeout(function () {
-//		$('html,body').css('animation', 'none');
-//		flag = true;
-//	}, 1000);
-//});
-//$('[href="#"]').click(function () {
-//	if (!flag) {
-//		return
-//	};
-//	$('body').css('animation', 'onload 2s ease');
-//	flag = false;
-//	setTimeout(function () {
-//		$('.news-link a').trigger('click');
-//
-//	}, 500)
-//	setTimeout(function () {
-//		$('html,body').css('animation', 'none');
-//		flag = true;
-//	}, 2000);
-//});
-
-//$('.button-up').click(function () {
-//	if (!flag) {
-//		return
-//	}
-//	$('body').css('animation', 'onload 1s ease');
-//	flag = false;
-//	setTimeout(function () {
-//		$("html,body").scrollTop(0)
-//	}, 500)
-//	setTimeout(function () {
-//		$('html,body').css('animation', 'none');
-//		flag = true;
-//	}, 1000);
-//});

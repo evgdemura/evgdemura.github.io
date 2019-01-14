@@ -7,160 +7,184 @@
 	<meta name="author" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Skokov</title>
-	<!--	<link rel="shortcut icon" href="" type="image/x-icon">-->
-	<!--	<link rel="apple-touch-icon" href="">-->
-	<link type="text/css" href="css/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
-	<link type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap-grid.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="css/reset/reset.css">
-	<link rel="stylesheet" href="js/wow.js/animate.css">
-	<link rel="stylesheet" href="textillate-master/assets/animate.css">
-	<link type="text/css" href="style.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="css/media.css">
+	<link rel="stylesheet" href="css/reset/reset.min.css">
 	<style>
-
 		* {
-	box-sizing: border-box;
-}
- 
-* a {
-	text-decoration: none;
-}
-
-* a:hover {
-	text-decoration: none;
-}
-
-* li {
-	list-style-type: none;
-}
-
-html {
-	background: #01001d;
-	min-height: 100%;
-	height: 1px;
-/*	overflow: hidden;*/
-/*
-animation-name: onload;
-animation-delay: 5s;
-animation-timing-function: ease;
-*/
-}
-
-body {
-	background: url(img/bg1.png) repeat top center, url(img/layers.png) no-repeat top center;
-	background-color: #000;
-	max-width: 1600px;
-	margin: auto;
-	min-width: 360px;
+			box-sizing: border-box;
+		}
+		* a {
+			text-decoration: none;
+		}
+		* a:hover {
+			text-decoration: none;
+		}
+		* li {
+			list-style-type: none;
+		}
+		html {
+			background: #000;
+			min-height: 100%;
+			height: 1px;
+		}
+.header {
+	margin-bottom: 110px;
 	font-family: sans-serif;
-	position: relative;
-	min-height: 100%;
-	background-attachment: fixed;
-/*	animation: onload 5s ease;*/
 }
-
-	
-.button-up {
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
-	display: flex;
-	position: fixed;
-	width: 50px;
-	height: 50px;
-	background-color: transparent;
-	font-size: 40px;
-	color: #fe504f;
-	bottom: 70px;
-	right: -70px;
-	z-index: 1000;
-	cursor: pointer;
-	transition: all .2s ease;
+		body {
+			background: url(img/bg1.png) repeat top center, url(img/layers.png) no-repeat top center;
+			background-color: #000;
+			-webkit-background-size: cover;
+			background-size: cover;
+			max-width: 1600px;
+			margin: auto;
+			min-width: 360px;
+			font-family: sans-serif;
+			position: relative;
+			min-height: 100%;
+			background-attachment: fixed;
+		}
+		.button-up {
+			display: -webkit-flex;
+			display: -moz-flex;
+			display: -ms-flex;
+			display: -o-flex;
+			display: flex;
+			position: fixed;
+			width: 50px;
+			height: 50px;
+			background-color: transparent;
+			font-size: 40px;
+			color: #fe504f;
+			bottom: 70px;
+			right: -70px;
+			z-index: 1000;
+			cursor: pointer;
+			transition: all .2s ease;
+		}
+		.button-up i:hover {
+			-webkit-transform: scale(1.1);
+			-ms-transform: scale(1.1);
+			-o-transform: scale(1.1);
+			transform: scale(1.1);
+		}
+		.header-content {
+			display: -webkit-flex;
+			display: -moz-flex;
+			display: -ms-flex;
+			display: -o-flex;
+			display: flex;
+			position: relative;
+			padding-top: 70px;
+			align-items: center;
+			justify-content: space-between;
+		}
+		.header_nav ul {
+			display: -webkit-flex;
+			display: -moz-flex;
+			display: -ms-flex;
+			display: -o-flex;
+			display: flex;
+			width: 100%;
+			justify-content: space-between;
+		}
+		#header_button,
+		#header_button-news {
+			padding: 10px;
+			font-size: 16px;
+			border: 0;
+			outline: 0;
+			background-color: red;
+			cursor: pointer;
+			text-transform: uppercase;
+			font-family: Verdana, MyriadPro-Regular, AdobeInvisFont;
+			color: white;
+			transition: all 0.1s ease;
+			display: none;
+			border: 2px solid transparent;
+		}
+		#header_button:hover,
+		#header_button-news:hover {
+			border-bottom: 2px solid #fff;
+		}
+		.header_nav li {
+			margin: 0px 20px;
+		}
+		.header_nav li a {
+			font-family: Verdana, MyriadPro-Regular, AdobeInvisFont;
+			font-size: 14px;
+			color: white;
+			text-transform: uppercase;
+			white-space: nowrap;
+		}
+		.header_nav li a:hover {
+			border-bottom: 2px solid red;
+			transition: all 0.1s ease;
+		}
+		.logo_link {
+			font-family: sans-serif;
+			font-size: 32px;
+			color: #fe504f;
+		}
+		.logo_link:hover {
+			color: #fff;
+			border-bottom: 2px solid red;
+			transition: color .3s ease, border .1s ease;
+		}
+		.logo_link:not(:hover) {
+			transition: color .15s ease;
+		}
+		.s_startItem_content {
+	text-align: left;
 }
-
-.button-up i:hover {
-	-webkit-transform: scale(1.1);
-	-ms-transform: scale(1.1);
-	-o-transform: scale(1.1);
-	transform: scale(1.1);
-}
-
-.header-content {
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
-	display: flex;
-	position: relative;
-	padding-top: 70px;
-	align-items: center;
-	justify-content: space-between;
-}
-
-.header_nav ul {
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
-	display: flex;
-	width: 100%;
-	justify-content: space-between;
-}
-
-#header_button,
-#header_button-news {
-	padding: 10px;
-	font-size: 16px;
-	border: 0;
-	outline: 0;
-	background-color: red;
-	cursor: pointer;
-	text-transform: uppercase;
-	font-family: Verdana, MyriadPro-Regular, AdobeInvisFont;
-	color: white;
-	transition: all 0.1s ease;
-	display: none;
-	border: 2px solid transparent;
-}
-
-#header_button:hover,
-#header_button-news:hover {
-	border-bottom: 2px solid #fff;
-}
-
-.header_nav li {
-	margin: 0px 20px;
-}
-
-.header_nav li a {
-	font-family: Verdana, MyriadPro-Regular, AdobeInvisFont;
-	font-size: 14px;
-	color: white;
-	text-transform: uppercase;
-	white-space: nowrap;
-}
-
-.header_nav li a:hover {
-	border-bottom: 2px solid red;
-	transition: all 0.1s ease;
-}
-
-.logo_link {
+.s_startItem_content h1 {
+	font-size: 60px;
 	font-family: sans-serif;
-	font-size: 32px;
-	color: #fe504f;
+	color: white;
+	margin-bottom: 30px;
 }
-
-.logo_link:hover {
+.s_startItem_content p {
+	font-size: 20px;
+	color: white;
+	line-height: 1.5;
+	margin-bottom: 40px;
+	font-family: sans-serif;
+}
+.s_startItem {
+	position: relative;
+	margin-bottom: 300px;
+	padding: 20px 0px;
+}
+.s_startItem .header_profit {
+	top: -20px;
+}
+.startItem_link {
+	display: inline-block;
+	padding: 25px 55px;
+	border-radius: 40px;
+	margin-right: 30px;
 	color: #fff;
-	border-bottom: 2px solid red;
-	transition: color .3s ease, border .1s ease;
+	font-size: 20px;
+	transition: all 0.2s ease;
+	margin-bottom: 20px;
 }
-
-.logo_link:not(:hover) {
-	transition: color .15s ease;
-}</style>
+.startItem_link:last-child {
+	margin-right: 0;
+}
+.getStarted_link {
+	background-color: #fe504f;
+}
+.getStarted_link:hover {
+	background-color: #fd1312;
+	transition: all 0.4s ease;
+}
+.learnMore_link {
+	background-color: #343434;
+}
+.learnMore_link:hover {
+	background-color: #141313;
+	transition: all 0.4s ease;
+}
+	</style>
 </head>
 
 <body class="body_index">
@@ -338,18 +362,78 @@ body {
 				<div class="ourTeam">
 					<h2>our team</h2>
 					<div class="team_wrap" id="team">
-						<div class="team_item"><img src="img/men.png" alt=""></div>
-						<div class="team_item"><img src="img/woomen.png" alt=""></div>
-						<div class="team_item"><img src="img/woomen2.png" alt=""></div>
-						<div class="team_item"><img src="img/men.png" alt=""></div>
-						<div class="team_item"><img src="img/woomen.png" alt=""></div>
-						<div class="team_item"><img src="img/woomen2.png" alt=""></div>
-						<div class="team_item"><img src="img/men.png" alt=""></div>
-						<div class="team_item"><img src="img/woomen.png" alt=""></div>
-						<div class="team_item"><img src="img/woomen2.png" alt=""></div>
-						<div class="team_item"><img src="img/woomen.png" alt=""></div>
-						<div class="team_item"><img src="img/men.png" alt=""></div>
-						<div class="team_item"><img src="img/woomen.png" alt=""></div>
+						<div class="team_item"><img src="img/men.png" alt="">
+							<div class="team_item-information">
+								<h2 class="name_this">some name</h2>
+								<p class="desc_this">some description</p>
+							</div>
+						</div>
+						<div class="team_item"><img src="img/woomen.png" alt="">
+							<div class="team_item-information">
+								<h2 class="name_this">some name</h2>
+								<p class="desc_this">some description</p>
+							</div>
+						</div>
+						<div class="team_item"><img src="img/woomen2.png" alt="">
+							<div class="team_item-information">
+								<h2 class="name_this">some name</h2>
+								<p class="desc_this">some description</p>
+							</div>
+						</div>
+						<div class="team_item"><img src="img/men.png" alt="">
+							<div class="team_item-information">
+								<h2 class="name_this">some name</h2>
+								<p class="desc_this">some description</p>
+							</div>
+						</div>
+						<div class="team_item"><img src="img/woomen.png" alt="">
+							<div class="team_item-information">
+								<h2 class="name_this">some name</h2>
+								<p class="desc_this">some description</p>
+							</div>
+						</div>
+						<div class="team_item"><img src="img/woomen2.png" alt="">
+							<div class="team_item-information">
+								<h2 class="name_this">some name</h2>
+								<p class="desc_this">some description</p>
+							</div>
+						</div>
+						<div class="team_item"><img src="img/men.png" alt="">
+							<div class="team_item-information">
+								<h2 class="name_this">some name</h2>
+								<p class="desc_this">some description</p>
+							</div>
+						</div>
+						<div class="team_item"><img src="img/woomen.png" alt="">
+							<div class="team_item-information">
+								<h2 class="name_this">some name</h2>
+								<p class="desc_this">some description</p>
+							</div>
+						</div>
+						<div class="team_item"><img src="img/woomen2.png" alt="">
+							<div class="team_item-information">
+								<h2 class="name_this">some name</h2>
+								<p class="desc_this">some description</p>
+							</div>
+						</div>
+						<div class="team_item"><img src="img/woomen.png" alt="">
+							<div class="team_item-information">
+								<h2 class="name_this">some name</h2>
+								<p class="desc_this">some description</p>
+							</div>
+						</div>
+						<div class="team_item"><img src="img/men.png" alt="">
+							<div class="team_item-information">
+								<h2 class="name_this">some name</h2>
+								<p class="desc_this">some description</p>
+							</div>
+						</div>
+						<div class="team_item"><img src="img/woomen.png" alt="">
+							<div class="team_item-information">
+								<h2 class="name_this" some name></h2>
+								<p class="desc_this">some description</p>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -434,13 +518,12 @@ body {
 							you, visit our office websites. To get the latest updates from SKOKOV,
 							subscribe to a newsletter or connect with us on social media.</p>
 						<div class="contact_info-item">
-							<li class="contact_info-map wow slideInLeft" data-wow-offset="100" data-wow-delay="0.1s"><a href="https://goo.gl/maps/uNFhkLbSrwM2" target="_blank">43 gagarina street, kharkov, ukraine</a></li>
-							<li class="contact_info-tel wow slideInLeft" data-wow-offset="100" data-wow-delay="0.2s"><a href="tel:+38(057)777-05-05">+38(057)777-05-05</a></li>
-							<li class="contact_info-mail wow slideInLeft" data-wow-offset="100" data-wow-delay="0.3s"><a href="mailto:mynameisskokov@gmail.com">mynameisskokov@gmail.com</a></li>
+							<li class="contact_info-map wow slideInLeft" data-wow-offset="50" data-wow-delay="0.1s"><a href="https://goo.gl/maps/uNFhkLbSrwM2" target="_blank">43 gagarina street, kharkov, ukraine</a></li>
+							<li class="contact_info-tel wow slideInLeft" data-wow-offset="50" data-wow-delay="0.2s"><a href="tel:+38(057)777-05-05">+38(057)777-05-05</a></li>
+							<li class="contact_info-mail wow slideInLeft" data-wow-offset="50" data-wow-delay="0.3s"><a href="mailto:mynameisskokov@gmail.com">mynameisskokov@gmail.com</a></li>
 						</div>
 					</div>
 					<div class="footer_contact-form">
-
 						<h1>contact</h1>
 						<p>Please contact us using contact form below.</p>
 						<form action="">
@@ -454,7 +537,6 @@ body {
 				</div>
 			</div>
 		</div>
-
 		<div class="container">
 			<div class="footer_wrap">
 				<span class="copyright">&copy;2014 skokov - all rights reserved</span>
@@ -466,17 +548,32 @@ body {
 			</div>
 		</div>
 	</footer>
+	<script>
+		function loadCSS(hf) {
+			var ms = document.createElement("link");
+			ms.rel = "stylesheet";
+			ms.href = hf;
+			document.getElementsByTagName("head")[0].appendChild(ms);
+		}
+		loadCSS("css/font-awesome-4.7.0/css/font-awesome.min.css");
+		loadCSS("https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap-grid.min.css");
+		loadCSS("js/wow.js/animate.min.css");
+		loadCSS("textillate-master/assets/animate.min.css");
+		loadCSS("style.min.css");
+		loadCSS("css/media.min.css");
+
+	</script>
 	<script src="js/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="js/jquery-ui.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
 	<script src="js/wow.js/wow.min.js"></script>
 	<script>
 		new WOW().init();
 
 	</script>
-	<script src="textillate-master/jquery.textillate.js"></script>
-	<script src="textillate-master/assets/jquery.lettering.js"></script>
+	<script src="textillate-master/jquery.textillate.min.js"></script>
+	<script src="textillate-master/assets/jquery.lettering.min.js"></script>
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/waypoints/4.0.1/jquery.waypoints.min.js"></script>
-	<script src="js/main.js"></script>
+	<script src="js/main.min.js"></script>
 </body>
 
 </html>
