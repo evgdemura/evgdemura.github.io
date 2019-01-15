@@ -135,12 +135,9 @@ $(window).scroll(function () {
 	waypo("about-us", fnTextillate, "about-us", 100);
 })
 //===================================
-
 $(window).resize(function () {
 if ($(window).width() >= 650) {
-	if ($(window).width() != width) {
 		new WOW().init();
-		width = $(window).width();}
 } else {
 	var width = $(window).width()
 	if ($(window).width() != width) {
@@ -148,3 +145,4 @@ if ($(window).width() >= 650) {
 		width = $(window).width();}
 }
 })
+
