@@ -11,7 +11,7 @@
 <style>
 	.scroll-button {
      display: flex;
-     justify-content: center;
+	    justify-content: center;
      align-items: center;
      width: 40px;
      height: 40px;
@@ -522,9 +522,11 @@ color: #000;
 <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.ui/1.11.4/jquery-ui.min.js"></script>
 <script src="https://cdn.jsdelivr.net/wow/1.1.2/wow.min.js"></script>
 <script>
-	new WOW().init();
+	if ($(window).width() >= 650) {
+		new WOW().init();
+	}
 
 </script>
-<script src="js.min.js"></script>
+<script src="js.js"></script>
 
 </html>
