@@ -54,11 +54,12 @@ $("#form").submit(function () {
 })
 
 // ==================отключение wow.js на маленьком разрешении===============
+	var width = $(window).width()
 $(window).resize(function () {
 if ($(window).width() >= 650) {
 		new WOW().init();
 } else {
-	var width = $(window).width()
+
 	if ($(window).width() != width) {
 		window.location.reload();
 		width = $(window).width();}
