@@ -50,96 +50,103 @@ $('[href="#news"]').click(function () {
 //===================================================
 
 $(window).scroll(function () {
-			$('.team_item').each(function (index) {
-				$(this).css({
-					'transition-delay': index / 10 + 's'
-				});
-			})
-			$(".services_item").each(function (index) {
-				$(this).css({
-					'transition-delay': index / 10 + 's'
-				});
-			});
-
-			(function (offset) {
-				var target = $('.team_item').offset().top - offset;
-				if ($(window).scrollTop()>= target) {
-					$('.team_item').css('transform', 'rotateY(0deg)')
-				}
-
-			}(400));
+	$('.team_item').each(function (index) {
+		$(this).css({
+			'transition-delay': index / 10 + 's'
+		});
+	})
+	$(".services_item").each(function (index) {
+		$(this).css({
+			'transition-delay': index / 10 + 's'
+		});
+	});
 
 	(function (offset) {
-				var target = $('.services_item').offset().top - offset;
-				if ($(window).scrollTop()>= target) {
-					$('.services_item').css('transform', 'rotateY(0deg)')
-				}
+		var target = $('.team_item').offset().top - offset;
+		if ($(window).scrollTop() >= target) {
+			$('.team_item').css('transform', 'rotateY(0deg)')
+		}
 
-			}(400));
-//
-			});
-		//===========textillate=============
-		$(function () {
-			$('.textillate').textillate({
+	}(400));
+
+	(function (offset) {
+		var target = $('.services_item').offset().top - offset;
+		if ($(window).scrollTop() >= target) {
+			$('.services_item').css('transform', 'rotateY(0deg)')
+		}
+
+	}(400));
+	//
+});
+//===========textillate=============
+$(function () {
+	$('.textillate').textillate({
+		shuffle: true,
+		sync: false
+	});
+});
+var waypoint = new Waypoint({
+	element: $(".s_video-h1"),
+	handler: function (direction) {
+		$('.s_video-h1').textillate({ in: {
+				effect: 'fadeInLeftBig',
 				shuffle: true,
-				sync: false
-			});
+				delayScale: 1.5
+			}
 		});
-		var waypoint = new Waypoint({
-			element: $(".s_video-h1"),
-			handler: function (direction) {
-				$('.s_video-h1').textillate({ in: {
-						effect: 'fadeInLeftBig',
-						shuffle: true,
-						delayScale: 1.5
-					}
-				});
-			},
-			offset: $(window).height()
+	},
+	offset: $(window).height()
+});
+var waypoint = new Waypoint({
+	element: $(".news-desc"),
+	handler: function (direction) {
+		$('.news-desc').textillate({ in: {
+				effect: 'bounceInRight',
+				shuffle: true,
+				delayScale: .1
+			}
 		});
-		var waypoint = new Waypoint({
-			element: $(".news-desc"),
-			handler: function (direction) {
-				$('.news-desc').textillate({ in: {
-						effect: 'bounceInRight',
-						shuffle: true,
-						delayScale: .1
-					}
-				});
-			},
-			offset: $(window).height()
-		})
+	},
+	offset: $(window).height()
+})
 
-		//===========my waypoint & textillate=============
-		function fnTextillate(el) {
-			var elem = document.getElementById(el);
-			var eff = elem.getAttribute('data-in-effect');
-			var delay = elem.getAttribute('data-in-delay');
-			$(elem).textillate({ in: {
-					effect: eff || 'bounceInRight',
-					shuffle: true,
-					delayScale: delay || .2
-				}
-			});
+//===========my waypoint & textillate=============
+function fnTextillate(el) {
+	var elem = document.getElementById(el);
+	var eff = elem.getAttribute('data-in-effect');
+	var delay = elem.getAttribute('data-in-delay');
+	$(elem).textillate({ in: {
+			effect: eff || 'bounceInRight',
+			shuffle: true,
+			delayScale: delay || .2
 		}
+	});
+}
 
-		function waypo(elem, fn, fnArg, offset) {
-			var target = document.getElementById(elem);
-			var targetCoord = target.getBoundingClientRect().top;
-			if (targetCoord <= $(window).height() - (offset || 0) && targetCoord >= 0) {
-				fnTextillate(fnArg);
-			};
-		}
-		$(window).scroll(function () {
-			waypo('s_services-h1', fnTextillate, 's_services-h1', 100);
-			waypo("about-us", fnTextillate, "about-us", 100);
-		})
-		//===================================
-		$(window).resize(function () {
+function waypo(elem, fn, fnArg, offset) {
+	var target = document.getElementById(elem);
+	var targetCoord = target.getBoundingClientRect().top;
+	if (targetCoord <= $(window).height() - (offset || 0) && targetCoord >= 0) {
+		fnTextillate(fnArg);
+	};
+}
+$(window).scroll(function () {
+	waypo('s_services-h1', fnTextillate, 's_services-h1', 100);
+	waypo("about-us", fnTextillate, "about-us", 100);
+})
+//===================================
 
-			if ($(window).width() >= 650) {
-				new WOW().init();
-			} else {
-				window.location.reload()
-			};
-		})
+$(window).resize(function () {
+if ($(window).width() >= 650) {
+
+
+	if ($(window).width() != width) {
+		new WOW().init();
+		width = $(window).width();}
+} else {
+	var width = $(window).width()
+	if ($(window).width() != width) {
+		window.location.reload();
+		width = $(window).width();}
+}
+})
