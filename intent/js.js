@@ -122,12 +122,12 @@ $('.preview-item').click(function (event) {
 })
 
 //===============autoplay===========
-var autoPlay = setInterval(rightClick, 4000);
-
-$('.arrows-right,.arrows-left,.preview-item').on('click', function () {
-	clearInterval(autoPlay);
-	autoPlay = setInterval(rightClick, 4000)
-})
+//var autoPlay = setInterval(rightClick, 4000);
+//
+//$('.arrows-right,.arrows-left,.preview-item').on('click', function () {
+//	clearInterval(autoPlay);
+//	autoPlay = setInterval(rightClick, 4000)
+//})
 
 //==============прокрутка мышью====================
 $('.slider-wrap').on('wheel', function (event) {
