@@ -430,7 +430,8 @@
 						</div>
 						<div class="team_item"><img src="img/woomen.png" alt="">
 							<div class="team_item-information">
-								<h2 class="name_this" some name></h2>
+								<h2 class="name_this">
+									some name</h2>
 								<p class="desc_this">some description</p>
 							</div>
 						</div>
@@ -567,13 +568,15 @@
 	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
 	<script src="js/wow.js/wow.min.js"></script>
 	<script>
-		new WOW().init();
+		if ($(window).width() >= 650) {
+			new WOW().init();
+		}
 
 	</script>
 	<script src="textillate-master/jquery.textillate.min.js"></script>
 	<script src="textillate-master/assets/jquery.lettering.min.js"></script>
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/waypoints/4.0.1/jquery.waypoints.min.js"></script>
-	<script src="js/main.min.js"></script>
+	<script src="js/main.js"></script>
 </body>
 
 </html>

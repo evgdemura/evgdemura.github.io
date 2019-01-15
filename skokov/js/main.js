@@ -1,3 +1,4 @@
+'use strict'
 //============menu================
 $("#header_button").click(function () {
 	$('.header_nav ul').slideToggle();
@@ -49,80 +50,96 @@ $('[href="#news"]').click(function () {
 //===================================================
 
 $(window).scroll(function () {
-	$('.team_item').each(function (index) {
-		$(this).css({
-			'transition-delay': index / 10 + 's'
-		});
-	})
-	$(".services_item").each(function (index) {
-		$(this).css({
-			'transition-delay': index / 10 + 's'
-		});
-	});
-	var item = document.getElementById('team');
-	var services = document.getElementById('services');
-	var coordsItem = item.getBoundingClientRect().top;
-	var coordsServices = services.getBoundingClientRect().top;
-	if (coordsItem <= $(window).height() - 200 && coordsItem >= 0) {
-		$('.team_item').css('transform', 'rotateY(0deg)')
-	};
-	if (coordsServices <= $(window).height() - 200 && coordsServices >= 0) {
-		$('.services_item').css('transform', 'rotate(0deg)')
-	}
-});
-//===========textillate=============
-$(function () {
-	$('.textillate').textillate({
-		shuffle: true,
-		sync: false
-	});
-});
-var waypoint = new Waypoint({
-	element: $(".s_video-h1"),
-	handler: function (direction) {
-		$('.s_video-h1').textillate({ in: {
-				effect: 'fadeInLeftBig',
-				shuffle: true,
-				delayScale: 1.5
-			}
-		});
-	},
-	offset: $(window).height()
-});
-var waypoint = new Waypoint({
-	element: $(".news-desc"),
-	handler: function (direction) {
-		$('.news-desc').textillate({ in: {
-				effect: 'bounceInRight',
-				shuffle: true,
-				delayScale: .1
-			}
-		});
-	},
-	offset: $(window).height()
-})
+			$('.team_item').each(function (index) {
+				$(this).css({
+					'transition-delay': index / 10 + 's'
+				});
+			})
+			$(".services_item").each(function (index) {
+				$(this).css({
+					'transition-delay': index / 10 + 's'
+				});
+			});
 
-//===========my waypoint & textillate=============
-function fnTextillate(el) {
-	var elem = document.getElementById(el);
-	var eff = elem.getAttribute('data-in-effect');
-	var delay = elem.getAttribute('data-in-delay');
-	$(elem).textillate({ in: {
-			effect: eff || 'bounceInRight',
-			shuffle: true,
-			delayScale: delay || .2
+			(function (offset) {
+				var target = $('.team_item').offset().top - offset;
+				if ($(window).scrollTop()>= target) {
+					$('.team_item').css('transform', 'rotateY(0deg)')
+				}
+
+			}(400));
+
+	(function (offset) {
+				var target = $('.services_item').offset().top - offset;
+				if ($(window).scrollTop()>= target) {
+					$('.services_item').css('transform', 'rotateY(0deg)')
+				}
+
+			}(400));
+//
+			});
+		//===========textillate=============
+		$(function () {
+			$('.textillate').textillate({
+				shuffle: true,
+				sync: false
+			});
+		});
+		var waypoint = new Waypoint({
+			element: $(".s_video-h1"),
+			handler: function (direction) {
+				$('.s_video-h1').textillate({ in: {
+						effect: 'fadeInLeftBig',
+						shuffle: true,
+						delayScale: 1.5
+					}
+				});
+			},
+			offset: $(window).height()
+		});
+		var waypoint = new Waypoint({
+			element: $(".news-desc"),
+			handler: function (direction) {
+				$('.news-desc').textillate({ in: {
+						effect: 'bounceInRight',
+						shuffle: true,
+						delayScale: .1
+					}
+				});
+			},
+			offset: $(window).height()
+		})
+
+		//===========my waypoint & textillate=============
+		function fnTextillate(el) {
+			var elem = document.getElementById(el);
+			var eff = elem.getAttribute('data-in-effect');
+			var delay = elem.getAttribute('data-in-delay');
+			$(elem).textillate({ in: {
+					effect: eff || 'bounceInRight',
+					shuffle: true,
+					delayScale: delay || .2
+				}
+			});
 		}
-	});
-}
 
-function waypo(elem, fn, fnArg, offset) {
-	var target = document.getElementById(elem);
-	var targetCoord = target.getBoundingClientRect().top;
-	if (targetCoord <= $(window).height() - (offset || 0) && targetCoord >= 0) {
-		fnTextillate(fnArg);
-	};
-}
-$(window).scroll(function () {
-	waypo('s_services-h1', fnTextillate, 's_services-h1', 100);
-	waypo("about-us", fnTextillate, "about-us", 100);
-})
+		function waypo(elem, fn, fnArg, offset) {
+			var target = document.getElementById(elem);
+			var targetCoord = target.getBoundingClientRect().top;
+			if (targetCoord <= $(window).height() - (offset || 0) && targetCoord >= 0) {
+				fnTextillate(fnArg);
+			};
+		}
+		$(window).scroll(function () {
+			waypo('s_services-h1', fnTextillate, 's_services-h1', 100);
+			waypo("about-us", fnTextillate, "about-us", 100);
+		})
+		//===================================
+		$(window).resize(function () {
+
+			if ($(window).width() >= 650) {
+				new WOW().init();
+			} else {
+				window.location.reload()
+			};
+		})
