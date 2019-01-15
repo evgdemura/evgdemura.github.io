@@ -3,7 +3,6 @@
 /LAMBDA/jquery-ui-1.12.1.custom/
 /LAMBDA/.sass-cache/
 /LAMBDA/style.css
-/LAMBDA/js.js
 /LAMBDA/wow.min.js
 /LAMBDA/media.css
 /skokov/css/media.css
@@ -12,3 +11,4 @@
 /intent/style.scss
 /intent/style.css.map
 /skokov/js/main.min.js
+/LAMBDA/js.min.js

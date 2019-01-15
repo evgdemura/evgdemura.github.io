@@ -138,8 +138,6 @@ $(window).scroll(function () {
 
 $(window).resize(function () {
 if ($(window).width() >= 650) {
-
-
 	if ($(window).width() != width) {
 		new WOW().init();
 		width = $(window).width();}
