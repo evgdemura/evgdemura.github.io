@@ -112,10 +112,12 @@
 
 @media only screen and (max-width : 650px) {
 	body{
-		background: url(img/bg1.png) repeat top center, url(img/img@1X-mob.jpg) no-repeat top center;
+		background: url(../img/bg1.png) repeat top center, url(../img/img@1X-mob.jpg) no-repeat top center;
 	}
 	.footer_contacts {
-	background: url(img/footer-mob.jpg) no-repeat top center;
+	background: url(../img/footer-mob.jpg) no-repeat top center;
+		-webkit-background-size: cover;
+		background-size: cover;
 }
 	.services_item {
 		-webkit-transform: rotate(0deg);
