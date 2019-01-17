@@ -223,6 +223,8 @@
 }
 
 .copyright {
+	display: inline-block;
+	margin: 10px;
 	color: #fff;
 	font-size: 12pt;
 }
@@ -926,4 +928,8 @@
 .news-link {
 	display: none;
 	position: absolute;
+}
+
+.footer_social_link {
+	margin: 10px;
 }
